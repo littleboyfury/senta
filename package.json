@@ -2,30 +2,40 @@
   "name": "root",
   "version": "1.0.0",
   "description": "report js error to serve",
-  "private": true,
+  "private": false,
   "workspaces": [
     "packages/*"
   ],
   "scripts": {
     "test:browser": "pnpm link --dir examples/browser",
-    "dev": "pnpm -r --filter=@monitor-backend/backend run dev",
-    "build:backend": "pnpm -r --filter=@monitor-backend/backend run build",
-    "build:bundle": "pnpm -r --filter=@senta/* run build:bundle",
-    "build:esm": "pnpm -r --filter=@senta/* run build:esm",
-    "build": "pnpm build:esm && pnpm build:bundle",
-    "clean": "pnpm -r --filter=@monitor-*/* run clean",
-    "clean:node_modules": "rimraf **/node_modules"
+    "dev": "pnpm -r --filter=@skyfury/backend run dev",
+    "build:backend": "pnpm -r --filter=@skyfury/backend run build",
+    "build:bundle": "pnpm -r --filter=@skyfury/* run build:bundle",
+    "build:esm": "pnpm -r --filter=@skyfury/* run build:esm",
+    "build": "pnpm build:esm && pnpm build:bundle && pnpm build:backend",
+    "clean": "pnpm -r --filter=@skyfury-*/* run clean",
+    "clean:node_modules": "rimraf **/node_modules",
+    "preinstall": "npx only-allow pnpm",
+    "change": "changeset",
+    "vc": "changeset version",
+    "release": "pnpm build && pnpm release:only",
+    "release:only": "changeset publish --registry=https://registry.npmjs.com/"
+  },
+  "publishConfig": {
+    "access": "public"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/littleboyfury/senta.git"
+    "url": "git+https://github.com/littleboyfury/skyfury.git"
   },
   "author": "skyfury",
   "bugs": {
-    "url": "https://github.com/littleboyfury/senta/issues"
+    "url": "https://github.com/littleboyfury/skyfury/issues"
   },
-  "homepage": "https://github.com/littleboyfury/senta#readme",
+  "homepage": "https://github.com/littleboyfury/skyfury#readme",
   "devDependencies": {
+    "@changesets/changelog-github": "^0.4.5",
+    "@changesets/cli": "^2.23.2",
     "@rollup/plugin-alias": "^3.1.9",
     "@rollup/plugin-commonjs": "^22.0.1",
     "@rollup/plugin-json": "^4.1.0",

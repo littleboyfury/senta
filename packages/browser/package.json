@@ -1,6 +1,6 @@
 {
-  "name": "@senta/browser",
-  "version": "1.0.0",
+  "name": "@skyfury/browser",
+  "version": "2.0.0",
   "description": "",
   "main": "dist/index.umd.js",
   "module": "esm/index.js",
@@ -15,6 +15,6 @@
     "esm"
   ],
   "dependencies": {
-    "@senta/core": "workspace:^1.0.0"
+    "@skyfury/core": "workspace:^2.0.0"
   }
 }
