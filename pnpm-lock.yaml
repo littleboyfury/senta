@@ -66,9 +66,9 @@ importers:
 
   packages/browser:
     specifiers:
-      '@monitor-frontend/core': workspace:^1.0.0
+      '@senta/core': workspace:^1.0.0
     dependencies:
-      '@monitor-frontend/core': link:../core
+      '@senta/core': link:../core
 
   packages/core:
     specifiers:

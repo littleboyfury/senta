@@ -1,5 +1,5 @@
 {
-  "name": "@monitor-frontend/browser",
+  "name": "@senta/browser",
   "version": "1.0.0",
   "description": "",
   "main": "dist/index.umd.js",
@@ -15,6 +15,6 @@
     "esm"
   ],
   "dependencies": {
-    "@monitor-frontend/core": "workspace:^1.0.0"
+    "@senta/core": "workspace:^1.0.0"
   }
 }
