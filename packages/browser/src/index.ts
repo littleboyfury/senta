@@ -1,5 +1,5 @@
-import { init } from '@monitor-frontend/core'
-import type { Options } from '@monitor-frontend/core'
+import { init } from '@senta/core'
+import type { Options } from '@senta/core'
 
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
