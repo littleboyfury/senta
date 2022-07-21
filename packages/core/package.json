@@ -1,11 +1,20 @@
 {
-  "name": "@senta/core",
+  "name": "@monitor-frontend/core",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "dist/index.umd.js",
+  "module": "esm/index.js",
+  "types": "esm/index.d.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build:bundle": "rimraf dist && rollup --config",
+    "build:esm": "rimraf esm && tsc -p tsconfig.json",
+    "clean": "rimraf dist esm .pnpm-debug.log"
   },
-  "author": "skyfury",
-  "license": "ISC"
+  "files": [
+    "dist",
+    "esm"
+  ],
+  "dependencies": {
+    "tslib": "^2.4.0"
+  }
 }

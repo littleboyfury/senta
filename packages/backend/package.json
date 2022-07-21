@@ -1,0 +1,25 @@
+{
+  "name": "@monitor-backend/backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "rimraf dist && tsc -p tsconfig.json",
+    "dev": "ts-node app/app.ts",
+    "clean": "rimraf dist .pnpm-debug.log"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "koa": "^2.13.4",
+    "koa-body": "^5.0.0",
+    "koa-router": "^12.0.0",
+    "koa2-cors": "^2.0.6"
+  },
+  "devDependencies": {
+    "@types/koa": "^2.13.5",
+    "@types/koa2-cors": "^2.0.2",
+    "@types/koa__router": "^8.0.11",
+    "tslib": "^2.4.0"
+  }
+}

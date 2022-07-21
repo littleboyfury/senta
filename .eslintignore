@@ -1,0 +1,6 @@
+node_modules/
+**/*.d.ts
+commitlint.config.js
+rollup.base.js
+**/rollup.config.js
+examples

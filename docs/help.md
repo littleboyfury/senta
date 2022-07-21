@@ -1,3 +1,3 @@
 # Monorepo
 
-https://zhuanlan.zhihu.com/p/422740629
+[monorepo](https://zhuanlan.zhihu.com/p/422740629)

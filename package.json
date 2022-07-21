@@ -1,25 +1,46 @@
 {
-  "name": "@senta/root",
+  "name": "root",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "clean": "rm -rf node_modules **/*/node_modules"
+    "test:browser": "pnpm link --dir examples/browser",
+    "dev": "pnpm -r --filter=@monitor-backend/backend run dev",
+    "build:backend": "pnpm -r --filter=@monitor-backend/backend run build",
+    "build:bundle": "pnpm -r --filter=@monitor-frontend/* run build:bundle",
+    "build:esm": "pnpm -r --filter=@monitor-frontend/* run build:esm",
+    "build": "pnpm build:esm && pnpm build:bundle",
+    "clean": "pnpm -r --filter=@monitor-*/* run clean",
+    "clean:node_modules": "rimraf **/node_modules"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/littleboyfury/senta.git"
+    "url": ""
   },
-  "author": "skyfury",
-  "license": "ISC",
+  "author": "",
   "bugs": {
-    "url": "https://github.com/littleboyfury/senta/issues"
+    "url": ""
   },
-  "homepage": "https://github.com/littleboyfury/senta#readme",
+  "homepage": "",
   "devDependencies": {
+    "@rollup/plugin-alias": "^3.1.9",
+    "@rollup/plugin-commonjs": "^22.0.1",
+    "@rollup/plugin-json": "^4.1.0",
+    "@rollup/plugin-node-resolve": "^13.3.0",
+    "@rollup/plugin-replace": "^4.0.0",
     "@types/node": "^18.0.3",
+    "@typescript-eslint/eslint-plugin": "^5.30.6",
+    "@typescript-eslint/parser": "^5.30.6",
+    "esbuild": "^0.14.49",
     "eslint": "^8.19.0",
+    "http-server": "^14.1.1",
+    "npm-run-all": "^4.1.5",
+    "rimraf": "^3.0.2",
+    "rollup": "^2.77.0",
+    "rollup-plugin-esbuild": "^4.9.1",
     "ts-node": "^10.8.2",
     "typescript": "^4.7.4"
   }
