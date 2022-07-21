@@ -67,9 +67,9 @@ importers:
 
   packages/browser:
     specifiers:
-      '@skyfury/core': workspace:^2.0.0
+      '@freege/core': workspace:^1.0.0
     dependencies:
-      '@skyfury/core': link:../core
+      '@freege/core': link:../core
 
   packages/core:
     specifiers:

@@ -1,5 +1,5 @@
-import { init } from '@skyfury/core'
-import type { Options } from '@skyfury/core'
+import { init } from '@freege/core'
+import type { Options } from '@freege/core'
 
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
