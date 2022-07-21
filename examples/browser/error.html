@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./node_modules/root/packages/browser/dist/index.iife.js"></script>
+    <script>
+      FEMonitorBrowser.initBrowser('localhost', {
+        host: 'http://localhost:7001',
+        url: '/api/v1/error/track'
+      })
+    </script>
+</head>
+<body>
+<div>无效链接捕获</div>
+<img src="https://yun.tuia.cn/image/kkk.png"/>
+<script src="https://yun.tuia.cn/foundnull.js"></script>
+<link href="https://yun.tuia.cn/foundnull.css" rel="stylesheet"/>
+<hr>
+
+<div>同步和异步错误捕获</div>
+<button id="syncError">同步错误</button>
+<button id="asyncError">异步错误</button>
+<hr>
+
+<div>Promise 捕获</div>
+<button id="fetchError">fetch 错误</button>
+<button id="promiseError">promise 错误</button>
+<hr>
+
+<script>
+  const syncError = document.querySelector('#syncError')
+  const asyncError = document.querySelector('#asyncError')
+  const fetchError = document.querySelector('#fetchError')
+  const promiseError = document.querySelector('#promiseError')
+
+  // 同步错误
+  syncError.addEventListener('click', () => {
+    throw new Error('sync error')
+  })
+
+  // 异步错误
+  asyncError.addEventListener('click', () => {
+    setTimeout(() => {
+      throw new Error('async error')
+    }, 1000)
+  })
+
+  // fetch
+  fetchError.addEventListener('click', () => {
+    fetch('https://xxx.xxx.xxx.com')
+  })
+
+  // promise
+  promiseError.addEventListener('click', () => {
+    new Promise((r, j) => {
+      j('promise error')
+    })
+  })
+
+  // TODO 还没有捕获
+  // console.log(nodefinedVar)
+  // new Image().src = '/remote/image/notdeinfed.png'
+</script>
+</body>
+</html>
