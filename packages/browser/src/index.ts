@@ -1,5 +1,5 @@
-import { init } from '@senta/core'
-import type { Options } from '@senta/core'
+import { init } from '@skyfury/core'
+import type { Options } from '@skyfury/core'
 
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore

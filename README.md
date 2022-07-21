@@ -1,4 +1,4 @@
-# senta
+# Senta
 
 ## install
 ```bash
