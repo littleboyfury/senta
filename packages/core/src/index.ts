@@ -1,5 +1,6 @@
 import { bugReport } from './api'
 
+// TODO 待优化
 export interface Options {
   host: string
   url: string
@@ -13,7 +14,7 @@ export const SDK_VERSION = __VERSION__
 
 class TrackEvent {
   private options: Options
-  private id: string
+  private readonly id: string
 
   constructor(id: string, options: Options) {
     if (options) {

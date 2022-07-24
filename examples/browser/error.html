@@ -6,13 +6,20 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <script src="./node_modules/root/packages/browser/dist/index.iife.js"></script>
+    <script async src="./node_modules/root/packages/browser/dist/index.iife.js"></script>
 <!--    <script src="./node_modules/@freege/browser/dist/index.iife.js"></script>-->
     <script>
-      FEMonitorBrowser.initBrowser('localhost', {
-        host: 'http://localhost:7001',
-        url: '/api/v1/error/track'
-      })
+      window.__FRONTEND_CONFIG__ = {
+        id: '1',
+        options: {
+          host: 'http://localhost:7001',
+          url: '/api/v1/error/track'
+        }
+      }
+      // FEMonitorBrowser.initBrowser('localhost', {
+      //   host: 'http://localhost:7001',
+      //   url: '/api/v1/error/track'
+      // })
     </script>
 </head>
 <body>

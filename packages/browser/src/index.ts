@@ -5,6 +5,15 @@ import type { Options } from '@freege/core'
 // @ts-ignore
 export const SDK_VERSION = __VERSION__
 
+if (window.__FRONTEND_CONFIG__) {
+  initBrowser(window.__FRONTEND_CONFIG__.id, window.__FRONTEND_CONFIG__.options)
+}
+
+/**
+ * TODO 需要上报错误行号和列号
+ * @param id
+ * @param options
+ */
 export function initBrowser(id: string, options: Options) {
   const trackEvent = init(id, options)
 
